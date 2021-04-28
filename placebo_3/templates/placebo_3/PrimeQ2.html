@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Next, we would like to ask you some questions about yourself:
+{% endblock %}
+
+
+
+{% block content %}
+<p>To what extent you agree or disagree with the following statements:</p>
+
+
+
+
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

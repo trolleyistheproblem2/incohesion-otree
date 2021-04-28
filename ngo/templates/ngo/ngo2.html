@@ -1,0 +1,77 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Give to charity
+{% endblock %}
+
+{% block content %}
+
+    <table border = 2 cellpadding="10" class="RankTable">
+  <tr>
+      <th>Islamic Relief</th>
+    <th>Keep for yourself</th>
+
+
+
+  </tr>
+       <tr>
+           <td><img src="{% static image_path3 %}" height="200" width="250"/></td>
+           <td><img src="{% static image_path1 %}" height="200" width="250"/></td>
+
+
+  </tr>
+        <tr>
+            <td>Vision: “Inspired by our Islamic faith and guided by our values, we envisage a world where communities are empowered, social obligations are fulfilled and people respond as one to the suffering of others”. </td>
+    <td></td>
+
+
+
+  </tr>
+
+        <tr>
+            <td>{% formfield player.allocation3 %}</td>
+{#           <td>{% formfield player.allocation1_2 %}</td>#}
+
+            <td><div class="form-group">
+                     <label class="control-label col-sm-2" for="remainder">Amount keeping for yourself</label>
+                     <div class="col-sm-10">
+                        <input type="number" name="remainder" id="remainder" class="form-control" readonly />
+                     </div>
+                  </div>
+
+            </td>
+
+  </tr>
+
+
+    </table>
+
+    <p></p>
+    <p></p>
+
+    {% next_button %}
+
+
+
+    {{ block.super }}
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+$(function(){
+    $('#id_allocation1_2, #id_allocation3').keyup(function(){
+               var id_allocation1_2 = parseFloat($('#id_allocation1_2').val()) || 0;
+               var id_allocation3 = parseFloat($('#id_allocation3').val()) || 0;
+               $('#remainder').val(100 - id_allocation3);
+            });
+         });
+
+
+
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Give to charity
+{% endblock %}
+
+{% block content %}
+
+    <table border = 2 cellpadding="10" class="RankTable">
+  <tr>
+      <th>Apnalaya</th>
+    <th>Keep for yourself</th>
+
+
+
+  </tr>
+       <tr>
+           <td><img src="{% static image_path2 %}" height="200" width="250"/></td>
+           <td><img src="{% static image_path1 %}" height="200" width="250"/></td>
+
+
+
+  </tr>
+        <tr>
+            <td>Vision: “To enable underserved people to improve health, livelihood and gender relations”.</td>
+    <td></td>
+
+
+
+  </tr>
+
+        <tr>
+            <td>{% formfield player.allocation2 %}</td>
+{#           <td>{% formfield player.allocation1_1 %}</td>#}
+
+            <td><div class="form-group">
+                     <label class="control-label col-sm-2" for="remainder">Keeping for self</label>
+                     <div class="col-sm-10">
+                        <input type="number" name="remainder" id="remainder" class="form-control" readonly />
+                     </div>
+                  </div>
+
+            </td>
+
+
+  </tr>
+
+
+    </table>
+
+    <p></p>
+    <p></p>
+
+    {% next_button %}
+
+
+
+    {{ block.super }}
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+$(function(){
+            $('#id_allocation1_1, #id_allocation2').keyup(function(){
+               var id_allocation1_1 = parseFloat($('#id_allocation1_1').val()) || 0;
+               var id_allocation2 = parseFloat($('#id_allocation2').val()) || 0;
+               $('#remainder').val(100 - id_allocation2 );
+            });
+         });
+
+
+    </script>
+
+{% endblock %}

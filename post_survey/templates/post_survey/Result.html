@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Thank You!
+{% endblock %}
+
+{% block content %}
+
+    <p>Game 1 Result: {{ prisoner_payoff }}</p>
+    <p>Game 2 Result: {{ dictator_payoff }}</p>
+    <p>Game 3 Result: {{ ngo_payoff }}</p>
+
+    <p>The computer randomly picked
+
+    {% if game_excluded == 1 %}
+            Game 2 and Game 3
+        {% elif game_excluded == 2 %}
+            Game 1 and Game 3
+        {% elif game_excluded == 3 %}
+            Game 1 and Game 2
+        {% endif %}
+    for your payoff.
+
+
+    </p>
+
+    <p></p>
+
+    <p>Thank you for your time and participation. Your payoff for this session is {{ participant.payoff }}</p>
+
+    <p>Please be seated until the instructor calls your subject ID. You will then be paid the amount you earned in a private area outside this room. Your earnings will not be told to anybody else. If the amount that you’ve been paid is correct, please sign the receipt with today’s date, and return the receipt back to the instructor. </p>
+
+    <p>Do not forget to take your earnings with you.</p>
+
+    <p>As a final request, we ask of you to not discuss the games you played and the decisions you took in this session with your classmates who have yet to participate in the session. </p>
+
+    <p>Thank you!</p>
+
+
+    <p>Thank you for your participation.</p>
+    <p></p>
+
+
+{% endblock %}

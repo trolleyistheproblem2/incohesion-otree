@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Thank you! You will see the outcomes and your earnings after we have finished all the tasks.
+Before proceeding to the next game we would like to make sure that you were paying attention
+to the previous questions. You were previously asked to read a short text about the renaming
+of Indian cities that have Muslim/Urdu sounding names.
+{% endblock %}
+
+{% block content %}
+
+    <p></p>
+
+   <img src="{% static prime_image %}" width="650" height="380"/>
+
+    <p></p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Give to charity
+{% endblock %}
+
+{% block content %}
+
+    <table border = 2 cellpadding="10" class="RankTable">
+  <tr>
+    <th>Keep for yourself</th>
+    <th>Apnalaya</th>
+      <th>Islamic Relief</th>
+      <th>The Akanksha Foundation</th>
+      <th>Muktangan Education Trust</th>
+
+  </tr>
+       <tr>
+           <td><img src="{% static image_path1 %}" height="200" width="250"/></td>
+            <td><img src="{% static image_path2 %}" height="200" width="250"/></td>
+           <td><img src="{% static image_path3 %}" height="200" width="250"/></td>
+           <td><img src="{% static image_path4 %}" height="200" width="250"/></td>
+           <td><img src="{% static image_path5 %}" height="200" width="250"/></td>
+
+  </tr>
+        <tr>
+    <td></td>
+    <td>General</td>
+      <td>General</td>
+      <td>Education</td>
+      <td>Education</td>
+
+  </tr>
+
+        <tr>
+           <td>{% formfield player.allocation1 %}</td>
+            <td>{% formfield player.allocation2 %}</td>
+           <td>{% formfield player.allocation3 %}</td>
+           <td>{% formfield player.allocation4 %}</td>
+            <td>{% formfield player.allocation5 %}</td>
+
+  </tr>
+
+
+    </table>
+
+    <p></p>
+    <p></p>
+
+    {% next_button %}
+
+
+
+    {{ block.super }}
+{% endblock %}

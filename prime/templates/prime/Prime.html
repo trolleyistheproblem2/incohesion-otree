@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Please read the following passage and answer the question based on it.
+{% endblock %}
+
+{% block content %}
+
+    <p>We would like to ask you a few more questions. First, we would like to hear your opinion on a contested policy. Please read the following newspaper extracts and comment carefully:  </p>
+
+    <i><p>A city in one of India's most populated states is having its Muslim name changed to a Hindu one. The change removes allusions to the city’s historical Mughal-era rule, with the area named Allahabad by the Muslim emperor, Akbar, in 1583. </p>
+
+        <p>The city has been given the new name of Prayagraj, the elongated version of its original name of Prayag before Mughal-era rulers changed it to the Islamic appellation. The state government has said the decision was taken to restore the city's ancient identity as a major Hindu pilgrimage centre.</p>
+
+        <p>Many other cities and roads with Urdu/Muslim names have been changed as well. This includes Aurangzeb Road in New Dehli named after the sixth Mughal emperor. The supporters of the renaming of the Aurangzeb Road in New Delhi argued that the Mughal emperor was an invader and a cruel ruler, who does not deserve to be commemorated in modern India.</p>
+
+        <p>Place names are an important element of a country's cultural landscape, as they naturally document and reflect a locality's heritage and identity.</p>
+
+    </i>
+
+</p>
+
+   <img src="{% static prime_image %}" width="650" height="380"/>
+
+    <p></p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

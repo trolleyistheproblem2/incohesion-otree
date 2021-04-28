@@ -1,0 +1,110 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}Decision: Round {{ player.round_number  }}{% endblock %}
+
+{% block style %}
+
+
+{#    <style>#}
+{##}
+{#    .PartnerTable{#}
+{#            position: relative;#}
+{##}
+{#        }#}
+{##}
+{#    #PlayerTable{#}
+{#            position: absolute;#}
+{#            left: 800px;#}
+{#            top: -260px#}
+{##}
+{#        }#}
+{##}
+{##}
+{##}
+{#    </style>#}
+
+
+
+{%  endblock %}
+
+{% block content %}
+
+    <style>
+
+    #PlayerTable{
+            position: absolute;
+            left: 1300px;
+            top: 115px
+
+        }
+
+    </style>
+<table border = 2 cellpadding="10" class="PartnerTable">
+
+       <td colspan="2"><b>Your partner:</b></td>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+
+  </tr>
+       <tr>
+    <td>Religion</td>
+    <td>{{ partner_religion }}</td>
+  </tr>
+       <tr>
+    <td>Financial Status</td>
+    <td>{{ partner_senior }} Income</td>
+  </tr>
+  <tr>
+    <td>Year of Study</td>
+    <td>{{ partner_study_year }}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{ partner_age }}</td>
+  </tr>
+   </table>
+
+    <p></p>
+
+    <div id="PlayerTable">
+    <table border = 2 cellpadding="10" class="PlayerTable">
+    <td colspan="2"><b>You are:</b></td>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+
+  </tr>
+       <tr>
+    <td>Religion</td>
+    <td>{{ player_religion }}</td>
+  </tr>
+       <tr>
+    <td>Financial Status</td>
+    <td>{{ player_senior }} Income</td>
+  </tr>
+  <tr>
+    <td>Year of Study</td>
+    <td>{{ player_study_year }}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{ player_age }}</td>
+  </tr>
+   </table>
+    </div>
+
+<p></p>
+<p>
+
+    Please enter an amount in rupees, from 0 to 100 in the box below. This amount will be sent to your partner. You will keep the rest.
+</p>
+
+{% formfield player.sent label="I will send" %}
+
+{% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

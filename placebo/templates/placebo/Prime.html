@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Please read the following passage and answer the question based on it.
+{% endblock %}
+
+{% block content %}
+
+    <p>We now want to hear your opinion about a contested policy. Please read the following newspaper extract carefully: </p>
+
+    <i>
+
+    <p>The birth of four Royal Bengal tiger cubs in captivity at Rajiv Gandhi Zoological Park in October 2018 was finally made public by the zoo authorities on Monday. </p>
+    <p>The news of the birth of the three male and one female cubs was kept under wraps to protect them from undue attention, Raj Kumar Jadhav, director of the Zoological Park said. </p>
+    <p>“This is the first time that we had four cubs born here after we shifted to our current location in 2004. The cubs are healthy and are growing well,” he added</p>
+    <p>He pointed out that the newly-born cubs are extremely sensitive and do not like any disturbance. “We had kept them under observation. They were fed milk, eggs, beef and were de-wormed and vaccinated. They weigh 7-8 kg (approximately),” Jadhav said.</p>
+
+
+    </i>
+
+    <img src="{% static prime_image %}" width="650" height="380"/>
+
+    <p></p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

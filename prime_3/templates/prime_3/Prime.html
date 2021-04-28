@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    In a previous question you were asked some questions regarding the renaming of cities with Muslim names.
+{% endblock %}
+
+{% block content %}
+
+    <p></p>
+
+   <img src="{% static prime_image %}" width="650" height="380"/>
+
+    <p></p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Post-Survey Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    Thank you! Please answer the following follow-up questions:
+
+    {% formfields %}
+
+
+
+    <p>Thank you for answering these questions. Please click on the next button to submit your responses.</p>
+
+
+
+    {% next_button %}
+
+{% endblock %}

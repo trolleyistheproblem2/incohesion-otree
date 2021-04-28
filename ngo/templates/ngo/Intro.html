@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Game  3 Instructions
+{% endblock %}
+
+{% block content %}
+
+    <p>Give to charity</p>
+
+    <p>In the next and final task, you will again be given the amount of 100Rs. This time, you will have the choice to keep the money for yourself or gift it to a non-profit organization that works to improve the lives of the poor. You will be given the names of 4 different NGOs. For each NGO, you can choose how much between 0-100Rs you wish to gift. The NGO that finally receives the money will be selected by a random draw.
+    </p>
+
+
+
+
+
+    {% next_button %}
+
+
+
+    {{ block.super }}
+{% endblock %}
